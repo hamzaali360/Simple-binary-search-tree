@@ -2,6 +2,54 @@
 // #include <bits/stdc++.h>
 using namespace std;
 
+class Node {
+    public:
+        char* num;
+        Node* left;
+        Node* right;
+        Node() {
+            // num = "";
+            left = nullptr;
+            right = nullptr;
+            cout << "node is created" << endl;
+        }
+        Node(char x){
+            num = &x;
+            left = nullptr;
+            right = nullptr;
+
+        }
+        Node* getLeft(){
+            return left;
+        }
+    };
+
+class BST {
+    public:
+    int size_;
+    BST();
+    BST(const BST& other);
+    ~BST();
+    void insert(char x);
+    void inorder();
+    
+    Node* node;
+    void deleteNode(Node& n);
+};
+
+BST::BST() {
+    size_ = 0;
+    cout << "BST is created" << endl;
+}
+BST::BST(const BST& other){
+    // if(node->getLeft() != nullptr){
+    node->left
+    // }
+    
+}
+BST::~BST(){
+
+}
 
 
 int main(){
