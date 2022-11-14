@@ -1,0 +1,2 @@
+How I ran my code is in the terminal, I did (g++ Hamza_Ali_Project3.cpp) to compile my code.
+Then, to run the code is (./a.out) but for memory leak checks I do (valgrind --leak-check=yest --track-origins=yes ./a.out)
