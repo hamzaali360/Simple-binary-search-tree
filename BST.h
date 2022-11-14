@@ -63,7 +63,7 @@ class BST {
     public:
         BST();
         BST(const BST& other);
-        BST& operator=(const BST& other);
+        void operator=(const BST& other);
         ~BST();
         void insert(string s) { insert(root_, s);}
         void inorder(){recurInorder(root_); cout<<endl;}
@@ -92,10 +92,14 @@ BST::BST(const BST& other){
 
 }
 // assignment operator of = to copy the tree
-BST& BST::operator=(const BST& other) {
+void BST::operator=(const BST& other) {
+    if(this == &other) {
+        return;
+    }
+    deleteBST();
     this->root_ = clone(other.root_);
     this->size = other.size;
-    return *this;
+    return;
 }
 // destructor
 BST::~BST(){
