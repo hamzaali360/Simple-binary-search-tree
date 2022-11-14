@@ -151,8 +151,11 @@ else {
 // swap the root node of the trees
 void BST::swapBST(BST& other) {
     Node* temp = this->root_;
+    int tempNum = this->size;
     this->root_ = other.root_;
+    this->size = other.size;
     other.root_ = temp;
+    other.size = tempNum;
 }
 // recursion of the intersection to check any existing char* in both trees
 // and insert it into the new tree
@@ -172,16 +175,10 @@ void BST::intersection(BST& other){
 BST* temp = new BST();
 recurIntersection(other, temp, this->root_);
 this->deleteBST();
-this->root_ == NULL;
-this->root_ = temp->root_;
-// temp->root_->value = NULL;
-// temp->root_ = NULL;
-// temp = NULL;
-// delete temp;
-// temp = NULL;
-
-// temp->root_ = NULL;
-
+this->root_ = clone(temp->root_);
+this->size = temp->size;
+temp->deleteBST();
+delete temp;
 }
 // recursion for the union to add all the char* of both tree into one
 void BST::recurUnion(Node* otherNode) {

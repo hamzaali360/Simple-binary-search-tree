@@ -35,7 +35,6 @@ int main(){
             string element;
             cin >> element;
             S1.insert(element);
-            cout << "current size: " << S1.getSize() << endl;;
         }
         else if(command == "u"){
             S1.unionBST(S2);
